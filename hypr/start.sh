@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pgrep -af xfce-polkit &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Background
 swaybg --image ~/ &
