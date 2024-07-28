@@ -3,7 +3,8 @@
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Background
-swaybg --image /home/xara/Pictures/wallpapers/eclipse.jpg &
+swww-deamon &
+background.sh &
 
 # applets
 nm-applet &
