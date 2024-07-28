@@ -3,7 +3,7 @@
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Background
-swww-deamon &
+swww-daemon &
 background.sh &
 
 # applets
