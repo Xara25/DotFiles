@@ -3,7 +3,7 @@
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Background
-swaybg --image ~/ &
+swaybg --image /home/xara/Pictures/wallpapers/eclipse.jpg &
 
 # applets
 nm-applet &
@@ -12,4 +12,4 @@ nm-applet &
 waybar &
 
 # Notification
-dunst 
+exec swayosd-server & 
