@@ -6,7 +6,7 @@
 
     "modules-left": ["custom/logo", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["wireplumber", "group/bat", "group/net", "group/usage", "tray", "custom/power"],
+    "modules-right": ["wireplumber", "group/bat", "group/usage", "group/net", "custom/power"],
 
     "group/usage": {
         "orientation": "horizontal",
@@ -20,7 +20,7 @@
 
     "group/net": {
         "orientation": "horizontal",
-        "modules": ["hyprland/language", "network", "bluetooth"]
+        "modules": ["hyprland/language", "tray"]
     },
 
     "hyprland/workspaces": {
@@ -68,7 +68,7 @@
 
     "memory": {
         "interval": 30,
-        "format": "\uefc5   {used:0.1f}G"
+        "format": "  {used:0.1f}G"
     },
 
     "cpu": {
@@ -81,35 +81,15 @@
         "format": " {temperatureC}°C"
     },
 
-    "network": {
-        "format": "",
-        "format-ethernet": "\udb83\udc9d ",
-        "format-wifi": "{icon} ",
-        "format-disconnected": "\udb83\udc9c ",
-        "format-icons": ["\udb82\udd2f", "\udb82\udd1f", "\udb82\udd22", "\udb82\udd25", "\udb82\udd28"],
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "{ifname}",
-        "tooltip-format-disconnected": "Disconnected",
-	"on-click": "wofi-wifi-menu",
-    },
 
-    "bluetooth": {
-        "format": "\udb80\udcaf",
-        "format-disabled": "\udb80\udcb2",
-        "format-connected": "\udb80\udcb1",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"on-click": "blueman-manager"
-    },
 
     "hyprland/language": {
         "format": "{short}"
     },
 
     "tray": {
-        "icon-size": 12,
-        "spacing": 16
+        "icon-size": 13,
+        "spacing": 10
     },
 
     "custom/power": {
