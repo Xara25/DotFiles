@@ -2,15 +2,17 @@
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# Background
-swww-daemon &
-background.sh &
-
 # applets
 nm-applet &
+blueman-applet &
 
 # Bar
 waybar &
 
 # Notification
 exec swayosd-server & 
+
+# Background
+swww-daemon &
+exec $HOME/.config/hypr/scripts/background.sh &
+
