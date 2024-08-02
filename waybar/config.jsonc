@@ -29,9 +29,9 @@
         "format-icons": {
             "1": "\uf489",
             "2": "\udb80\ude39",
-            "3": "\udb82\ude1e",
-            "4": "\uf001",
-            "5": "\ue217",
+            "3": "\uf121",
+            "4": "\ueefe",
+            "5": "\uf013",
         },
         "icon-size": 50,
         "sort-by-number": true,
@@ -45,7 +45,7 @@
     },
 
     "clock": {
-        "format": "{:%d.%m.%Y | %I:%M %p}"
+        "format": "{:%d.%m.%Y I %I:%M %p}"
     },
 
     "wireplumber": {
