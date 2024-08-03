@@ -1,16 +1,21 @@
 #!/usr/bin/env bash
 
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# Auth agen
+/usr/lib/polkit-kde-authentication-agent-1 &
+
 
 # applets
 nm-applet &
 blueman-applet &
 
+# notify
+dunst &
+
 # Bar
 waybar &
 
 # Notification
-exec swayosd-server & 
+exec swayosd-server --show-percentage & 
 
 # Background
 swww-daemon &
