@@ -58,8 +58,8 @@ font-size: 20px;
 #battery,
 #memory,
 #cpu,
-#language,
 #custom-power,
+#tray,
 #custom-logo
 {
     margin-right: 0.8em;

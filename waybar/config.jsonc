@@ -6,7 +6,7 @@
 
     "modules-left": ["custom/logo", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["wireplumber", "group/bat", "group/usage", "group/net", "custom/power"],
+    "modules-right": ["custom/pacman", "group/net", "wireplumber", "group/bat", "group/usage", "custom/power"],
 
     "group/usage": {
         "orientation": "horizontal",
@@ -20,7 +20,7 @@
 
     "group/net": {
         "orientation": "horizontal",
-        "modules": ["hyprland/language", "tray"]
+        "modules": ["tray", "hyprland/language"]
     },
 
     "hyprland/workspaces": {
@@ -100,6 +100,15 @@
 
     "custom/logo": {
         "format": "\uf303"
+    },
+
+    "custom/pacman": {
+	    "format": "{}   ",
+	    "interval": 1500,                     // every hour
+	    "exec": "checkupdates | wc -l",       // # of updates
+	    "exec-if": "exit 0",                  // always run; consider advanced run conditions
+	    "on-click": "termite -e 'paru'; pkill -SIGRTMIN+8 waybar", // update system
+	    "signal": 8
     }
 
 
