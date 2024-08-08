@@ -3,6 +3,8 @@
 # Auth agen
 /usr/lib/polkit-kde-authentication-agent-1 &
 
+#clipbord
+wl-paste --watch cliphist store &
 
 # applets
 nm-applet &
