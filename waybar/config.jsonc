@@ -4,7 +4,7 @@
     "height": 24,
     "spacing": 5,
 
-    "modules-left": ["custom/logo", "hyprland/workspaces"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces"],
     "modules-center": ["clock"],
     "modules-right": ["custom/pacman", "group/net", "wireplumber", "group/bat", "group/usage", "custom/power"],
 
@@ -20,7 +20,7 @@
 
     "group/net": {
         "orientation": "horizontal",
-        "modules": ["tray", "hyprland/language"]
+        "modules": ["tray", "custom/clipboard","hyprland/language"]
     },
 
     "hyprland/workspaces": {
@@ -45,7 +45,29 @@
     },
 
     "clock": {
-        "format": "{:%d.%m.%Y I %I:%M %p}"
+	    "format": "{:%d.%m.%Y I %I:%M %p}",
+	    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "on-click-right": "mode",
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
     },
 
     "wireplumber": {
@@ -87,6 +109,11 @@
         "format": "{short}"
     },
 
+    "custom/clipboard": {
+	    "format": "",
+	    "on-click": "cliphist list | tofi -c ~/.config/tofi/clip.conf | cliphist decode | wl-copy"
+    },
+
     "tray": {
         "icon-size": 13,
         "spacing": 10
@@ -98,16 +125,16 @@
 
     },
 
-    "custom/logo": {
-        "format": "\uf303"
+    "custom/launcher": {
+        "format": "\uf303",
+	"on-click": "tofi-drun --drun-launch=true --font /usr/share/fonts/TTF/HackNerdFont-Regular.ttf --width 500 --height 250"
     },
 
     "custom/pacman": {
 	    "format": "{}   ",
-	    "interval": 1500,                     // every hour
+	    "interval": 1500,                     // every 25 min
 	    "exec": "checkupdates | wc -l",       // # of updates
 	    "exec-if": "exit 0",                  // always run; consider advanced run conditions
-	    "on-click": "termite -e 'paru'; pkill -SIGRTMIN+8 waybar", // update system
 	    "signal": 8
     }
 

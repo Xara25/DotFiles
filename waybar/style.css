@@ -16,7 +16,7 @@
 }
 
 #workspaces *,
-#custom-logo, 
+#custom-launcher, 
 #clock
 {
 font-size: 20px;
@@ -46,7 +46,7 @@ font-size: 20px;
 #usage,
 #net,
 #custom-power,
-#custom-logo
+#custom-launcher
 {
     background-color: @background-alt;
     border-radius: 3px;
@@ -60,19 +60,20 @@ font-size: 20px;
 #cpu,
 #custom-power,
 #tray,
-#custom-logo
+#custom-clipboard,
+#custom-launcher
 {
     margin-right: 0.8em;
 }
 
 #custom-power,
-#custom-logo
+#custom-launcher
 {
     padding-right: 0.8em;
     margin-right: 0.5;
 
 }
-#custom-logo
+#custom-launcher
 {
     padding-right: 0.9em;
 }
