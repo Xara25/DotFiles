@@ -72,6 +72,7 @@
 
     "wireplumber": {
         "format": "\udb81\udd7e  {volume}%",
+	"format-muted": " ",
         "max-volume": 100,
         "scroll-step": 5,
 	"on-click": "pavucontrol"
@@ -132,9 +133,11 @@
 
     "custom/pacman": {
 	    "format": "{}   ",
+	    "on-click": "checkupdates | wc -l",
 	    "interval": 1500,                     // every 25 min
 	    "exec": "checkupdates | wc -l",       // # of updates
-	    "exec-if": "exit 0",                  // always run; consider advanced run conditions
+	    "exec-if": "exit 0",
+	    // always run; consider advanced run conditions
 	    "signal": 8
     }
 
